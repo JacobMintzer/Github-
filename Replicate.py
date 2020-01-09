@@ -35,12 +35,10 @@ def endServer():
 	func()
 
 def authenticate():
-	print("authenticating")
 	with open("Credentials.json") as file:
 		credentials=json.load(file)
 	githubSession=OAuth2Session(credentials["ClientID"],scope=["public_repo"])
 	authorization_url, state = githubSession.authorization_url("https://github.com/login/oauth/authorize")
-	#print (authorization_url)
 	print("Opening browser to authenticate. If browser does not show up, please copy and paste <{0}> into your browser to continue.".format(authorization_url))
 	webbrowser.open(authorization_url, new=2)
 
