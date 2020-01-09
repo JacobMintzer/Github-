@@ -1,6 +1,6 @@
 # Self-replicating Github repo 
 The first thing you'll need to do is go to https://github.com/settings/applications/new and fill in the fields as shown below.
-![OAuth2 settings](/github oauth.png)
+![OAuth2 settings](/github%20oauth.png)
 and put your clientID and clientSecret in Credentials.json.
 Next download the contents of this repo.
 Next you have to make sure you have Python3. To install python3 please download it [here](https://www.python.org/downloads/).
