@@ -13,9 +13,9 @@ log.disabled = True
 
 @app.route("/callback", methods=["GET"])
 def callback():
+	"""Allows user to not have to copy and paste any code; it just works."""
 	with open("Credentials.json") as file:
 		credentials=json.load(file)
-		
 	try:
 		githubSession=OAuth2Session(credentials["ClientID"])
 		githubSession.fetch_token('https://github.com/login/oauth/access_token',client_secret=credentials["ClientSecret"],authorization_response=request.url)
@@ -28,7 +28,7 @@ def callback():
 	
 
 def endServer():
-	time.sleep(10)
+	"""Kills the server so the program closes successfully."""
 	func = request.environ.get('werkzeug.server.shutdown')
 	if func is None:
 		raise RuntimeError('Not running with the Werkzeug Server')
